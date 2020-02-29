@@ -16,7 +16,10 @@ class School
   end
 
   def sort
-    @roster.collect {|grade, student| student.sort!}
-    @roster
-  end
+   sorted = {}
+   roster.each do |grade, students|
+     sorted[grade] = students.sort
+   end
+   sorted
+ end
 end
